@@ -1,4 +1,4 @@
-package main
+package src
 
 func (c Character) RenderRow(row int, color Color) string {
 	var segment Segment

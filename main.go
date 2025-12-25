@@ -6,12 +6,13 @@ import (
 	"time"
 
 	tea "github.com/charmbracelet/bubbletea"
+	gopomo "github.com/ryuuusuke/src"
 )
 
 func main() {
 	initialDuration := 25 * time.Minute
 
-	initialModel := pomodoroModel{
+	initialModel := gopomo.PomodoroModel{
 		totalDuration: initialDuration,
 		remainingTime: initialDuration,
 		isRunning:     false,

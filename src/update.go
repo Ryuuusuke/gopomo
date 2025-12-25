@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"time"
@@ -6,11 +6,11 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 )
 
-func (model pomodoroModel) Init() tea.Cmd {
+func (model PomodoroModel) Init() tea.Cmd {
 	return nil
 }
 
-func (model pomodoroModel) Update(message tea.Msg) (tea.Model, tea.Cmd) {
+func (model PomodoroModel) Update(message tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := message.(type) {
 
 	case tea.WindowSizeMsg:

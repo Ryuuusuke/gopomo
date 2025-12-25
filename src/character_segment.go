@@ -1,4 +1,4 @@
-package main
+package src
 
 var colonSegments = [5]Segment{
 	SegmentEmpty,
