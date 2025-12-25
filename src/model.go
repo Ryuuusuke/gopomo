@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"time"
@@ -6,7 +6,7 @@ import (
 
 type tickMessage time.Time
 
-type pomodoroModel struct {
+type PomodoroModel struct {
 	totalDuration time.Duration
 	remainingTime time.Duration
 	isRunning     bool

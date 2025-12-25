@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ func formatRemainingTime(duration time.Duration) string {
 	return fmt.Sprintf("%02d:%02d", minutes, seconds)
 }
 
-func (model pomodoroModel) View() string {
+func (model PomodoroModel) View() string {
 	// format time
 	timeText := formatRemainingTime(model.remainingTime)
 	bigClock := renderClockTime(timeText, ColorBlue)
