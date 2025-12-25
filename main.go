@@ -10,15 +10,16 @@ import (
 )
 
 func main() {
+	fmt.Print("\033[H\033[2J")
 	var timeInputFocus, timeInputRest time.Duration
-	fmt.Print("Insert your Focus time in Minute [25]:")
+	fmt.Printf("%s", gopomo.Cyan.Render("Insert Your Focus Time in Minute [25]: "))
 	fmt.Scanln(&timeInputFocus)
 	if timeInputFocus == 0 {
 		timeInputFocus = 25
 	}
 	focusTime := time.Duration(timeInputFocus) * time.Minute
 
-	fmt.Print("Insert your Rest time in Minute [5]:")
+	fmt.Printf("%s", gopomo.Green.Render("Insert Your Rest Time in Minute [5]: "))
 	fmt.Scanln(&timeInputRest)
 	if timeInputRest == 0 {
 		timeInputRest = 5

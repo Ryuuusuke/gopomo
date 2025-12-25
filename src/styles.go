@@ -22,4 +22,7 @@ var (
 
 	focusColor = lipgloss.Color("205")
 	restColor  = lipgloss.Color("#58fc97")
+
+	Green = lipgloss.NewStyle().Foreground(lipgloss.Color("#58fc97")).Bold(true)
+	Cyan  = lipgloss.NewStyle().Foreground(lipgloss.Color("#38e1f4")).Bold(true)
 )
