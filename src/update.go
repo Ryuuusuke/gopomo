@@ -14,8 +14,8 @@ func (model PomodoroModel) Update(message tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := message.(type) {
 
 	case tea.WindowSizeMsg:
-		model.width = msg.Width
-		model.height = msg.Height
+		model.Width = msg.Width
+		model.Height = msg.Height
 
 	case tea.KeyMsg:
 		switch msg.String() {
@@ -24,26 +24,26 @@ func (model PomodoroModel) Update(message tea.Msg) (tea.Model, tea.Cmd) {
 			return model, tea.Quit
 
 		case "s":
-			if !model.isRunning {
-				model.isRunning = true
+			if !model.IsRunning {
+				model.IsRunning = true
 				return model, startTicking()
 			}
 		case "p":
-			model.isRunning = false
+			model.IsRunning = false
 
 		case "r":
-			model.remainingTime = model.totalDuration
-			model.isRunning = false
+			model.RemainingTime = model.TotalDuration
+			model.IsRunning = false
 
 		}
 
 	case tickMessage:
-		if model.isRunning {
-			model.remainingTime -= time.Second
+		if model.IsRunning {
+			model.RemainingTime -= time.Second
 
-			if model.remainingTime <= 0 {
-				model.remainingTime = 0
-				model.isRunning = false
+			if model.RemainingTime <= 0 {
+				model.RemainingTime = 0
+				model.IsRunning = false
 				return model, nil
 			}
 			return model, startTicking()

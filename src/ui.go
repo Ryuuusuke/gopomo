@@ -16,13 +16,13 @@ func formatRemainingTime(duration time.Duration) string {
 
 func (model PomodoroModel) View() string {
 	// format time
-	timeText := formatRemainingTime(model.remainingTime)
+	timeText := formatRemainingTime(model.RemainingTime)
 	bigClock := renderClockTime(timeText, ColorBlue)
 
 	// status
 	statusText := "⏸ PAUSED"
 	statusView := pausedStyle.Render(statusText)
-	if model.isRunning {
+	if model.IsRunning {
 		statusText = "▶ RUNNING"
 		statusView = runningStyle.Render(statusText)
 	}
@@ -38,8 +38,8 @@ func (model PomodoroModel) View() string {
 	}, "\n")
 
 	return lipgloss.Place(
-		model.width,
-		model.height,
+		model.Width,
+		model.Height,
 		lipgloss.Center,
 		lipgloss.Center,
 		content,
