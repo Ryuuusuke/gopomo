@@ -7,9 +7,11 @@ import (
 type tickMessage time.Time
 
 type PomodoroModel struct {
-	TotalDuration time.Duration
+	FocusDuration time.Duration
+	RestDuration  time.Duration
 	RemainingTime time.Duration
 	IsRunning     bool
+	IsResting     bool
 	Width         int
 	Height        int
 }

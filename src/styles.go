@@ -5,16 +5,7 @@ import "github.com/charmbracelet/lipgloss"
 var (
 	titleStyle = lipgloss.NewStyle().
 			Bold(true).
-			Foreground(lipgloss.Color("205")).
 			Align(lipgloss.Center)
-
-	timerStyle = lipgloss.NewStyle().
-			Bold(true).
-			Foreground(lipgloss.Color("229")).
-			Align(lipgloss.Center).
-			Padding(1, 4).
-			Border(lipgloss.RoundedBorder()).
-			BorderForeground(lipgloss.Color("63"))
 
 	runningStyle = lipgloss.NewStyle().
 			Foreground(lipgloss.Color("42")).
@@ -28,4 +19,7 @@ var (
 	helpStyle = lipgloss.NewStyle().
 			Foreground(lipgloss.Color("241")).
 			Align(lipgloss.Center)
+
+	focusColor = lipgloss.Color("205")
+	restColor  = lipgloss.Color("#58fc97")
 )

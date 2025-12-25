@@ -14,10 +14,20 @@ func formatRemainingTime(duration time.Duration) string {
 	return fmt.Sprintf("%02d:%02d", minutes, seconds)
 }
 
+func renderTitle(model PomodoroModel) string {
+	focusTitle := titleStyle.Foreground(focusColor).Render("Go Pomo!")
+	if model.IsResting == true {
+		resttitle := titleStyle.Foreground(restColor).Render("Go Rest!")
+		return resttitle
+	}
+	return focusTitle
+}
+
 func (model PomodoroModel) View() string {
 	// format time
 	timeText := formatRemainingTime(model.RemainingTime)
 	bigClock := renderClockTime(timeText, ColorBlue)
+	title := renderTitle(model)
 
 	// status
 	statusText := "⏸ PAUSED"
@@ -28,7 +38,7 @@ func (model PomodoroModel) View() string {
 	}
 
 	content := strings.Join([]string{
-		titleStyle.Render("Go Pomo!"),
+		title,
 		"",
 		bigClock,
 		"",

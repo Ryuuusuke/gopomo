@@ -10,11 +10,25 @@ import (
 )
 
 func main() {
-	initialDuration := 25 * time.Minute
+	var timeInputFocus, timeInputRest time.Duration
+	fmt.Print("Insert your Focus time in Minute [25]:")
+	fmt.Scanln(&timeInputFocus)
+	if timeInputFocus == 0 {
+		timeInputFocus = 25
+	}
+	focusTime := time.Duration(timeInputFocus) * time.Minute
+
+	fmt.Print("Insert your Rest time in Minute [5]:")
+	fmt.Scanln(&timeInputRest)
+	if timeInputRest == 0 {
+		timeInputRest = 5
+	}
+	restTime := time.Duration(timeInputRest) * time.Minute
 
 	initialModel := gopomo.PomodoroModel{
-		TotalDuration: initialDuration,
-		RemainingTime: initialDuration,
+		FocusDuration: focusTime,
+		RestDuration:  restTime,
+		RemainingTime: focusTime,
 		IsRunning:     false,
 	}
 
