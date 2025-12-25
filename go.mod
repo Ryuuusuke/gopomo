@@ -1,4 +1,4 @@
-module gopomo
+module github.com/ryuuusuke/gopomo
 
 go 1.24.0
 
