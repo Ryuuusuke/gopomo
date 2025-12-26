@@ -1,7 +1,10 @@
 BINARY_NAME=gopomo
 
+install:
+	go build -o ./${BINARY_NAME} main.go && cp ${BINARY_NAME} $$HOME/.local/bin
+
 build:
-	go build -o ./${BINARY_NAME} main.go && cp ${BINARY_NAME} $HOME/.local/bin
+	go build
 
 run:
 	go run main.go
