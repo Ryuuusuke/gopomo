@@ -8,3 +8,11 @@ Little Pomodoro Timer in your terminal
 
 ![Gopomo Screenshot](./assets/ss1.png)
 ![With Notif](./assets/notif.png)
+
+# Installing
+Add your `$HOME/.local/bin` to your `$PATH` first. then:
+```bash
+git clone https://github.com/Ryuuusuke/gopomo.git
+cd gopomo
+make install
+```
